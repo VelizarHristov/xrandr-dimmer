@@ -89,12 +89,12 @@ class SlidersGroup(QGroupBox):
         sl.setTickPosition(QSlider.TicksBothSides)
         sl.setTickInterval(10)
         sl.setSingleStep(1)
-        sl.setMinimum(0)
+        sl.setMinimum(5)
         sl.setMaximum(100)
         sl.setValue(value)
 
         sb = QSpinBox()
-        sb.setRange(0, 100)
+        sb.setRange(5, 100)
         sb.setSingleStep(10)
         sb.setValue(value)
 
@@ -226,8 +226,14 @@ get_brightness_command = "xrandr -q --verbose " \
 
 def get_screen_data():
     from subprocess import getoutput
+    print("query command:", get_brightness_command)
     raw_data = getoutput(get_brightness_command).split("\n")
-    print("raw_data:", raw_data)
+    # in case of error
+    print("result:       ", raw_data)
+    if len(raw_data) < 2:
+        print("Error: couldn't get screen information -",
+              "please check the output of the query command. Exiting.")
+        exit()
 
     screen_data = []
     global primary
