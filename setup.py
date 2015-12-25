@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-setup(name         = 'xrandr dimmer',
+setup(name         = 'xrandr-dimmer',
       version      = '1.0',
       package_dir  = {'xrandr-dimmer': 'src/xrandr-dimmer'},
       packages     = ['xrandr-dimmer'],
