@@ -2,8 +2,8 @@ from distutils.core import setup
 
 setup(name         = 'xrandr dimmer',
       version      = '1.0',
-      package_dir  = {'xrandr_dimmer': 'src/xrandr_dimmer'},
-      packages     = ['xrandr_dimmer'],
+      package_dir  = {'xrandr-dimmer': 'src/xrandr-dimmer'},
+      packages     = ['xrandr-dimmer'],
       author       = 'Velizar Hristov',
       author_email = 'velizar.hs@gmail.com',
       license      = 'BSD-3',
